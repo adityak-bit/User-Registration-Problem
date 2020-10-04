@@ -4,25 +4,22 @@ import java.util.*;
 import java.util.regex.*;
 
 public class UserRegistration       {
+	static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration System");
-		System.out.println("Enter user email id");
+		System.out.println("Enter user mobile number");
 
-		Scanner sc = new Scanner(System.in);
-		String emailId = sc.nextLine();
+		String mobileNumber = sc.nextLine();
 
-		Pattern pattern = Pattern.compile("^[a-zA-Z0-9_+-]+(?:\\."+ 
-                "[a-zA-Z0-9_+-]+)*@" + 
-                "(?:[a-zA-Z0-9]+\\.){1,2}[a-z" + 
-                "A-Z]{2,4}$");
-		Matcher matcher = pattern.matcher(emailId);
+		Pattern pattern = Pattern.compile("^([0-9]{2})\\s([0-9]{10})$");
+		Matcher matcher = pattern.matcher(mobileNumber);
 		boolean result = matcher.matches();
 
-		
 		if (result == true) {
-			System.out.println("Valid user email id");
+			System.out.println("Valid user mobile number");
 		} else {
-			System.out.println("Invalid user email id");
+			System.out.println("Invalid user mobile number");
 		}
 	}
 
