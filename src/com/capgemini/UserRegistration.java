@@ -8,18 +8,19 @@ public class UserRegistration       {
 	
 	public static void main(String[] args) {
 		System.out.println("Welcome to User Registration System");
-		System.out.println("Enter user mobile number");
+		System.out.println("Enter user password");
 
-		String mobileNumber = sc.nextLine();
+		String password = sc.nextLine();
 
-		Pattern pattern = Pattern.compile("^([0-9]{2})\\s([0-9]{10})$");
-		Matcher matcher = pattern.matcher(mobileNumber);
+		Pattern pattern = Pattern.compile("^[A-Za-z0-9.-_+@*]{8,}");
+		Matcher matcher = pattern.matcher(password);
 		boolean result = matcher.matches();
 
 		if (result == true) {
-			System.out.println("Valid user mobile number");
+			System.out.println("Password : Rule 1 satisfied");
 		} else {
-			System.out.println("Invalid user mobile number");
+			System.out.println("Invalid user password");
+			System.out.println("Password must be of minimum 8 characters");
 		}
 	}
 
