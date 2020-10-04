@@ -24,7 +24,7 @@ public class UserRegistration       {
 		} else {
 			System.out.println("Invalid user password");
 			System.out.println("Password must be of minimum 8 characters");
-			System.out.println("Password must have atleast one numeric number");
+			System.out.println("Password must have exactly one special character");
 		}
 	}
 
